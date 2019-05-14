@@ -121,5 +121,17 @@ module.exports = {
       'medium': '20px',
       'large': '30px'
     }
+  },
+
+  width: [
+    50,
+    70
+  ],
+
+  breakpoint: {
+    'small': 577,
+    'medium': 769,
+    'large': 993,
+    'xlarge': 1201
   }
 }

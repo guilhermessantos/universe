@@ -1,0 +1,24 @@
+@mixin respond-min($value) {
+  $min: #{map-get($breakpoint, $value)}px;
+
+  @media (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin respond-max($value) {
+  $max: #{map-get($breakpoint, $value) - 1}px;
+
+  @media (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin respond-between($value-min, $value-max) {
+  $min: #{map-get($breakpoint, $value-min)}px;
+  $max: #{map-get($breakpoint, $value-max) - 1}px;
+
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
