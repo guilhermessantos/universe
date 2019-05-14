@@ -1,5 +1,8 @@
 $prefix: get('config.prefix');
+$prefix-modifier: get('config.prefix-modifier');
 
 $border-prefix: get('border.prefix');
 $border-position: get('border.position');
 $border-size: get('border.size');
+
+$color: get('color');
