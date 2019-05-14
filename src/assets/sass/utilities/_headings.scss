@@ -1,0 +1,10 @@
+@each $name, $value in $headings-size {
+  .#{$prefix-modifier}#{$name} {
+    font-size: $value;
+  }
+}
+
+.#{$prefix}title {
+  font-family: $headings-font;
+  line-height: $headings-line-height;
+}

@@ -1,8 +1,15 @@
+const typography = {
+  primary: 'Arial, sans-serif',
+  secondary: 'Arial, sans-serif',
+}
+
 module.exports = {
   config: {
     'prefix': 'ui-',
     'prefix-modifier': 'is-'
   },
+
+  typography: typography,
 
   border: {
     'prefix': 'b',
@@ -62,6 +69,19 @@ module.exports = {
       'start': 'flex-start',
       'end': 'flex-end',
       'center': 'center'
+    }
+  },
+
+  headings: {
+    'font-family': typography.primary,
+    'line-height': '1.2',
+    'size': {
+      'h1': '24px',
+      'h2': '20px',
+      'h3': '18px',
+      'h4': '16px',
+      'h5': '14px',
+      'h6': '12px'
     }
   }
 }
