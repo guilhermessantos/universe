@@ -83,5 +83,23 @@ module.exports = {
       'h5': '14px',
       'h6': '12px'
     }
+  },
+
+  margin: {
+    'prefix': 'm',
+    'position': {
+      'default': 'default',
+      'top': 't',
+      'bottom': 'b',
+      'left': 'l',
+      'right': 'r',
+      'vertical': 'v',
+      'horizontal': 'h'
+    },
+    'size': {
+      'small': '10px',
+      'medium': '20px',
+      'large': '30px'
+    }
   }
 }
