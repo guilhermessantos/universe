@@ -133,5 +133,37 @@ module.exports = {
     'medium': 769,
     'large': 993,
     'xlarge': 1201
+  },
+
+  grid: {
+    'col': 12,
+    'gutter': 30,
+    'container': '1140px'
+  },
+
+  text: {
+    'prefix': 'text-',
+    'size': {
+      'small': '12px',
+      'medium': '16px',
+      'large': '20px'
+    },
+
+    'weight': {
+      'semibold': 500,
+      'bold': 700
+    },
+
+    'align': [
+      'right',
+      'center',
+      'left'
+    ],
+
+    'transform': [
+      'uppercase',
+      'lowercase',
+      'capitalize'
+    ]
   }
 }

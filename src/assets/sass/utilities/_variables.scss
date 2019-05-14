@@ -31,3 +31,12 @@ $width: get('width');
 
 $breakpoint: get('breakpoint');
 
+$grid-col: get('grid.col');
+$grid-gutter: get('grid.gutter');
+$grid-container: get('grid.container');
+
+$text-prefix: get('text.prefix');
+$text-size: get('text.size');
+$text-weight: get('text.weight');
+$text-align: get('text.align');
+$text-transform: get('text.transform');
