@@ -13,7 +13,7 @@ module.exports = {
       'bottom': 'b',
       'left': 'l'
     },
-    size: {
+    'size': {
       'small': '1px',
       'medium': '3px',
       'large': '5px'
@@ -44,5 +44,24 @@ module.exports = {
     'block',
     'inline',
     'inline-block'
-  ]
+  ],
+
+  flex: {
+    'display': [
+      'flex',
+      'inline-flex'
+    ],
+    'justify': {
+      'start': 'flex-start',
+      'end': 'flex-end',
+      'between': 'space-between',
+      'around': 'space-around',
+      'center': 'center'
+    },
+    'align-items': {
+      'start': 'flex-start',
+      'end': 'flex-end',
+      'center': 'center'
+    }
+  }
 }
