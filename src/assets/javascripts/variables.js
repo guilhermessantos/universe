@@ -37,5 +37,12 @@ module.exports = {
     'black': '#000000',
     'white': '#ffffff',
     'link': '#f8f8f8'
-  }
+  },
+
+  display: [
+    'none',
+    'block',
+    'inline',
+    'inline-block'
+  ]
 }
