@@ -28,13 +28,20 @@ module.exports = {
   },
 
   padding: {
+    'prefix': 'p',
     'position': {
+      'default': 'default',
       'top': 't',
-      'right': 'r'
+      'bottom': 'b',
+      'left': 'l',
+      'right': 'r',
+      'vertical': 'v',
+      'horizontal': 'h'
     },
     'size': {
       'small': '10px',
-      'medium': '30px'
+      'medium': '20px',
+      'large': '30px'
     }
   },
 
