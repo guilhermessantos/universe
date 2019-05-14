@@ -165,5 +165,12 @@ module.exports = {
       'lowercase',
       'capitalize'
     ]
+  },
+
+  rounded: {
+    'small': '1px',
+    'medium': '2px',
+    'large': '5px',
+    'circle': '100%'
   }
 }
