@@ -1,7 +1,8 @@
 $prefix: get('config.prefix');
 $prefix-modifier: get('config.prefix-modifier');
 
-$border-prefix: get('border.prefix');
+$border-prefix-position: get('border.prefix-position');
+$border-prefix-size: get('border.prefix-size');
 $border-position: get('border.position');
 $border-size: get('border.size');
 
@@ -26,8 +27,6 @@ $margin-size: get('margin.size');
 $padding-prefix: get('padding.prefix');
 $padding-position: get('padding.position');
 $padding-size: get('padding.size');
-
-$width: get('width');
 
 $breakpoint: get('breakpoint');
 

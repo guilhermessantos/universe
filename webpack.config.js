@@ -1,9 +1,8 @@
 const path = require('path')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const sass = require('node-sass')
 const sassUtils = require('node-sass-utils')(sass)
 const sassVars = require(__dirname + '/src/assets/javascripts/variables.js')
-
-const VueLoaderPlugin      = require('vue-loader/lib/plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
@@ -16,19 +15,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.vue$/,
-        loader: 'vue-loader'
-      },
-      {
         test: /\.scss$/,
         use: [
+          'style-loader',
           {
-            loader: "style-loader"
+            loader: MiniCssExtractPlugin.loader
           },
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-          },
+          'css-loader',
           {
             loader: 'sass-loader',
             options: {
@@ -47,20 +40,25 @@ module.exports = {
               }
             }
           }
-        ]
+        ],
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
       }
-    ]
+    ],
   },
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'style.css'
-    })
+      filename: 'style.css',
+      chunkFilename: 'style.css',
+    }),
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     hot: true,
-    open: true,
+    open: false,
     port: 8000
   }
 }

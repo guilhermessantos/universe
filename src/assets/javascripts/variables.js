@@ -12,7 +12,8 @@ module.exports = {
   typography: typography,
 
   border: {
-    'prefix': 'b',
+    'prefix-position': 'b',
+    'prefix-size': 'bw-',
     'position': {
       'default': 'default',
       'top': 't',
@@ -103,6 +104,7 @@ module.exports = {
   },
 
   headings: {
+    'prefix': 'title',
     'font-family': typography.primary,
     'line-height': '1.2',
     'size': {
@@ -132,11 +134,6 @@ module.exports = {
       'large': '30px'
     }
   },
-
-  width: [
-    50,
-    70
-  ],
 
   breakpoint: {
     'small': 577,
