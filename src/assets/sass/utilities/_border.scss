@@ -1,11 +1,11 @@
 @each $name, $value in $border-position {
-  .#{$prefix}#{$border-prefix-position}#{contains-default($value)} {
+  .#{$border-prefix-position}#{contains-default($value)} {
     border#{contains-default($name, '-')}-style: solid;
   }
 }
 
 @each $name, $value in $border-size {
-  .#{$prefix}#{$border-prefix-size}#{$name} {
+  .#{$border-prefix-size}#{$name} {
     border-width: $value;
   }
 }

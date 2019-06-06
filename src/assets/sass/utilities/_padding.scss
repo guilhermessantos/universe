@@ -1,6 +1,6 @@
 @each $name, $value in $padding-position {
   @each $name-size, $value-size in $padding-size {
-    .#{$prefix + $padding-prefix + contains-default($value) + contains-default($name-size, '-')} {
+    .#{$padding-prefix + contains-default($value) + $padding-separator + $name-size} {
       @if $name == vertical {
         padding-bottom: $value-size;
         padding-top: $value-size;

@@ -1,9 +1,5 @@
 <template>
-  <div v-if="information" class="un-table-wrap">
-    <h3 class="un-table-wrap__title un-text-bold un-mb-small">
-      Information
-    </h3>
-
+  <div class="un-table-wrap">
     <table class="un-table">
       <thead class="un-text-bold">
         <tr>

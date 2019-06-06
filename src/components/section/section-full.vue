@@ -1,26 +1,19 @@
 <template>
-  <section class="un-section un-small un-flex">
-    <div class="un-section__sidebar">
+  <section class="un-section un-section-full">
+    <div class="un-section__full">
       <Header
         :title="title"
         :excerpt="excerpt"
-        :tag="tag"
       ></Header>
       <Prefix
+        v-if="prefix"
         :prefix="prefix"
         :prefixProps="prefixProps"
       ></Prefix>
     </div>
 
-    <div class="un-section__content">
-      <Table
-        :information="variable"
-        :informationProps="informationProps"
-      ></Table>
-
-      <div class="un-section__slot">
-        <slot></slot>
-      </div>
+    <div class="un-section__full">
+      <slot></slot>
     </div>
   </section>
 </template>
@@ -34,13 +27,8 @@
     props: [
       'prefix',
       'prefixProps',
-      'variable',
-      'information',
-      'informationProps',
       'title',
-      'excerpt',
-      'tag',
-      'full'
+      'excerpt'
     ],
     components: {
       Header,

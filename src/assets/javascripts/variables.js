@@ -3,17 +3,56 @@ const typography = {
   secondary: 'Arial, sans-serif',
 }
 
+const config = {
+  'prefix': 'ui-',
+  'prefix-modifier': 'is-'
+}
+
 module.exports = {
-  config: {
-    'prefix': 'ui-',
-    'prefix-modifier': 'is-'
+  config: config,
+
+  color: {
+    'prefix': `${config['prefix-modifier']}color-`,
+    'list': {
+      'gray': '#fafafa',
+      'gray-200': '#E5E5E5',
+      'black': '#000000',
+      'white': '#ffffff',
+      'link': '#f8f8f8'
+    }
+  },
+
+  theme: {
+    'prefix': `${config['prefix-modifier']}bg-`,
+    'list': {
+      'default': {
+        'base': '#4d538c',
+        'medium': '#474c81',
+        'dark': '#3b406c'
+      },
+      'love': {
+        'base': '#d60057',
+        'medium': '#c50050',
+        'dark': '#a40043'
+      },
+      'self-knowledge': {
+        'base': '#95358c',
+        'medium': '#893181',
+        'dark': '#73296c'
+      },
+      'career': {
+        'base': '#63a70a',
+        'medium': '#5b9a09',
+        'dark': '#4c8008'
+      }
+    }
   },
 
   typography: typography,
 
   border: {
-    'prefix-position': 'b',
-    'prefix-size': 'bw-',
+    'prefix-position': `${config['prefix-modifier']}b`,
+    'prefix-size': `${config['prefix-modifier']}bw-`,
     'position': {
       'default': 'default',
       'top': 't',
@@ -29,7 +68,8 @@ module.exports = {
   },
 
   padding: {
-    'prefix': 'p',
+    'prefix': `${config.prefix}p`,
+    'separator': '-',
     'position': {
       'default': 'default',
       'top': 't',
@@ -46,49 +86,21 @@ module.exports = {
     }
   },
 
-  color: {
-    'gray-100': '#fafafa',
-    'gray-200': '#E5E5E5',
-    'black': '#000000',
-    'white': '#ffffff',
-    'link': '#f8f8f8'
-  },
-
-  theme: {
-    'default': {
-      'base': '#4d538c',
-      'medium': '#474c81',
-      'dark': '#3b406c'
-    },
-    'love': {
-      'base': '#d60057',
-      'medium': '#c50050',
-      'dark': '#a40043'
-    },
-    'self-knowledge': {
-      'base': '#95358c',
-      'medium': '#893181',
-      'dark': '#73296c'
-    },
-    'career': {
-      'base': '#63a70a',
-      'medium': '#5b9a09',
-      'dark': '#4c8008'
-    }
-  },
-
-  display: [
-    'none',
-    'block',
-    'inline',
-    'inline-block'
-  ],
-
-  flex: {
-    'display': [
+  display: {
+    'prefix': `${config['prefix-modifier']}`,
+    'list': [
+      'none',
+      'block',
+      'inline',
+      'inline-block',
       'flex',
       'inline-flex'
-    ],
+    ]
+  },
+
+  flex: {
+    'prefix': `${config['prefix-modifier']}`,
+    'separator': '-',
     'justify': {
       'start': 'flex-start',
       'end': 'flex-end',
@@ -104,7 +116,8 @@ module.exports = {
   },
 
   headings: {
-    'prefix': 'title',
+    'prefix': `${config.prefix}title`,
+    'prefix-size': `${config['prefix-modifier']}`,
     'font-family': typography.primary,
     'line-height': '1.2',
     'size': {
@@ -118,7 +131,8 @@ module.exports = {
   },
 
   margin: {
-    'prefix': 'm',
+    'prefix': `${config.prefix}m`,
+    'separator': '-',
     'position': {
       'default': 'default',
       'top': 't',
@@ -143,17 +157,18 @@ module.exports = {
   },
 
   grid: {
-    'col': 12,
+    'col': 8,
     'gutter': 30,
     'container': '1140px'
   },
 
   text: {
-    'prefix': 'text-',
+    'prefix': `${config.prefix}text-`,
     'size': {
       'small': '12px',
       'medium': '16px',
-      'large': '20px'
+      'large': '20px',
+      'x-large': '30px'
     },
 
     'weight': {
@@ -175,9 +190,12 @@ module.exports = {
   },
 
   rounded: {
-    'small': '1px',
-    'medium': '2px',
-    'large': '5px',
-    'circle': '100%'
+    'prefix': `${config['prefix-modifier']}rounded-`,
+    'list': {
+      'small': '1px',
+      'medium': '2px',
+      'large': '5px',
+      'circle': '100%'
+    }
   }
 }

@@ -1,6 +1,6 @@
 @each $name, $value in $margin-position {
   @each $name-size, $value-size in $margin-size {
-    .#{$prefix + $margin-prefix + contains-default($value) + contains-default($name-size, '-')} {
+    .#{$margin-prefix + contains-default($value) + $margin-separator + $name-size} {
       @if $name == vertical {
         margin-bottom: $value-size;
         margin-top: $value-size;

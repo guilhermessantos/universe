@@ -2,7 +2,6 @@ const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const sass = require('node-sass')
 const sassUtils = require('node-sass-utils')(sass)
-const sassVars = require(__dirname + '/src/assets/javascripts/variables.js')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
@@ -18,17 +17,15 @@ module.exports = {
         test: /\.scss$/,
         use: [
           'style-loader',
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
           'css-loader',
           {
             loader: 'sass-loader',
             options: {
               functions: {
                 'get($keys)': function(keys) {
-                  keys = keys.getValue().split('.');
-                  let result = sassVars;
+                  keys = keys.getValue().split('.')
+                  delete require.cache[require.resolve(__dirname + '/src/assets/javascripts/variables.js')]
+                  let result = require(__dirname + '/src/assets/javascripts/variables.js')
 
                   for (let i = 0; i < keys.length; i++) {
                     result = result[keys[i]];

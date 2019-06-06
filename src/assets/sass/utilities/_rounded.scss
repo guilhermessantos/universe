@@ -1,5 +1,5 @@
 @each $name, $value in $rounded {
-  .#{$prefix-modifier}rounded-#{$name} {
+  .#{$rounded-prefix}#{$name} {
     border-radius: $value;
   }
 }

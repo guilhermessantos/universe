@@ -1,25 +1,23 @@
 <template>
-  <section
-    class="un-section"
-    :class="full ? 'un-full' : 'un-flex'"
-  >
-    <div class="un-section__sidebar">
-      <Header
-        :title="title"
-        :excerpt="excerpt"
-        :tag="tag"
-      ></Header>
+  <section class="un-section un-flex">
+    <div class="un-section__small">
+      <Header :title="title">
+        {{ excerpt }}
+      </Header>
       <Prefix
         :prefix="prefix"
         :prefixProps="prefixProps"
       ></Prefix>
+    </div>
+
+    <div class="un-section__small">
       <Table
-        :information="variable"
+        :information="information"
         :informationProps="informationProps"
       ></Table>
     </div>
 
-    <div class="un-section__content">
+    <div class="un-section__full un-shadow">
       <slot></slot>
     </div>
   </section>
@@ -38,9 +36,7 @@
       'information',
       'informationProps',
       'title',
-      'excerpt',
-      'tag',
-      'full'
+      'excerpt'
     ],
     components: {
       Header,

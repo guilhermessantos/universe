@@ -1,66 +1,84 @@
 <template>
   <div>
-    <Grid :prefix="prefix" :variable="grid"></Grid>
-    <Rounded :prefix="prefixModifier" :variable="rounded"></Rounded>
-    <Margin :prefix="prefix" :variable="margin"></Margin>
-    <Flex :prefix="prefix" :variable="flex"></Flex>
-    <Padding :prefix="prefix" :variable="padding"></Padding>
-    <TextSection :prefix="prefixModifier" :variable="text"></TextSection>
-    <Display :prefix="prefix" :variable="display"></Display>
-    <Border :prefix="prefix" :variable="border"></Border>
-    <Headings :prefix="prefixModifier" :variable="headings"></Headings>
+    <Category title="Colors">
+      <Color :variable="variables.color"></Color>
+      <Color :variable="variables.theme" type="theme"></Color>
+    </Category>
+
+    <Category title="Layout">
+      <Grid :variable="variables.grid" :prefix="variables.config"></Grid>
+      <SectionInfo :variable="variables.breakpoint" title="Breakpoint" informationProps="Size">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed, praesentium.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. In dolor ducimus numquam porro ab. Sit labore dolorum corrupti laboriosam ex rerum beatae suscipit odit, repellendus repellat expedita qui sint nobis?
+        </p>
+      </SectionInfo>
+      <TextSection :variable="variables.text"></TextSection>
+      <Headings :variable="variables.headings"></Headings>
+    </Category>
+
+    <Category title="Border">
+      <Border :variable="variables.border"></Border>
+      <Rounded :variable="variables.rounded"></Rounded>
+    </Category>
+
+    <Category title="Positions">
+      <Margin :variable="variables.margin"></Margin>
+      <Padding :variable="variables.padding"></Padding>
+    </Category>
+
+    <Category title="Display">
+      <Display :variable="variables.display"></Display>
+    </Category>
+
+    <Category title="Flex">
+      <Flex :variable="variables.flex"></Flex>
+    </Category>
   </div>
 </template>
 
 <script>
   import variables from './assets/javascripts/variables'
 
-  import Border from './components/border/border.vue'
-  import Headings from './components/headings/headings.vue'
-  import Display from './components/display/display.vue'
-  import TextSection from './components/text/text.vue'
-  import Padding from './components/padding/padding.vue'
-  import Flex from './components/display/flex.vue'
-  import Margin from './components/margin/margin.vue'
-  import Rounded from './components/rounded/rounded.vue'
-  import Grid from './components/grid/grid.vue'
+  import Grid from './components/sections/grid.vue'
+  import SectionInfo from './components/section/section-info.vue'
+  import Color from './components/sections/color.vue'
+  import Headings from './components/sections/headings.vue'
+  import Border from './components/sections/border.vue'
+  import Margin from './components/sections/margin.vue'
+  import Padding from './components/sections/padding.vue'
+  import Display from './components/sections/display.vue'
+  import Flex from './components/sections/flex.vue'
+  import TextSection from './components/sections/text.vue'
+  import Rounded from './components/sections/rounded.vue'
+  import Category from './components/category/category.vue'
 
   export default {
     data() {
       return {
-        prefix: variables.config.prefix,
-        prefixModifier: variables.config['prefix-modifier'],
-        border: variables.border,
-        headings: variables.headings,
-        display: variables.display,
-        text: variables.text,
-        padding: variables.padding,
-        flex: variables.flex,
-        margin: variables.margin,
-        rounded: variables.rounded,
-        grid: variables.grid
+        variables: variables,
       }
     },
     components: {
+      Grid,
+      SectionInfo,
+      Color,
       Border,
-      Headings,
+      Margin,
       Display,
-      TextSection,
+      Headings,
       Padding,
       Flex,
-      Margin,
+      TextSection,
       Rounded,
-      Grid
+      Category
     }
   }
 </script>
 
 <style lang="scss">
   @import './assets/sass/style.scss';
-
-  body {
-    background: #fdfdfd;
-    color: #4C4C4C;
-    font: 16px/1 'Open Sans', sans-serif;
-  }
+  @import './assets/sass/vue.scss';
 </style>

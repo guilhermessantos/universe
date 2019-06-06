@@ -1,23 +1,23 @@
 @each $name, $value in $text-weight {
-  .#{$prefix-modifier + $text-prefix + $name} {
+  .#{$text-prefix + $name} {
     font-weight: $value;
   }
 }
 
 @each $value in $text-align {
-  .#{$prefix-modifier + $text-prefix + $value} {
+  .#{$text-prefix + $value} {
     text-align: $value;
   }
 }
 
 @each $value in $text-transform {
-  .#{$prefix-modifier + $text-prefix + $value} {
+  .#{$text-prefix + $value} {
     text-transform: $value;
   }
 }
 
 @each $name, $value in $text-size {
-  .#{$prefix-modifier + $text-prefix + $name} {
+  .#{$text-prefix + $name} {
     font-size: $value;
   }
 }

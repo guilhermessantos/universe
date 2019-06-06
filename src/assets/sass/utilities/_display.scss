@@ -1,5 +1,5 @@
 @each $value in $display {
-  .#{$prefix + $value} {
+  .#{$display-prefix}#{$value} {
     display: $value;
   }
 }

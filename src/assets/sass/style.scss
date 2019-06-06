@@ -1,10 +1,11 @@
 @import './utilities/functions';
 @import './utilities/variables';
-@import './utilities/border';
-@import './utilities/reset';
-@import './utilities/breakpoint';
 @import './utilities/color';
 @import './utilities/theme';
+@import './utilities/border';
+
+@import './utilities/reset';
+@import './utilities/breakpoint';
 @import './utilities/display';
 @import './utilities/flex';
 @import './utilities/headings';
@@ -13,4 +14,3 @@
 @import './utilities/grid';
 @import './utilities/text';
 @import './utilities/rounded';
-@import './vue';

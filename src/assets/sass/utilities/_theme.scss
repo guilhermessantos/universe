@@ -1,7 +1,7 @@
 @each $name, $value in $theme {
   @each $_name, $_value in $value {
-    .#{$prefix-modifier + $name}-bg#{contains-default($_name, '-', 'base')},
-    .#{$prefix-modifier + $name}-bg#{contains-default($_name, '-', 'base')}:hover {
+    .#{$theme-prefix + $name}#{contains-default($_name, '-', 'base')},
+    .#{$theme-prefix + $name}#{contains-default($_name, '-', 'base')}:hover {
       background-color: $_value;
     }
   }

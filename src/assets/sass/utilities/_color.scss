@@ -1,5 +1,5 @@
 @each $name, $value in $color {
-  .#{$prefix-modifier + $name}-color {
+  .#{$color-prefix + $name} {
     color: $value;
   }
 }

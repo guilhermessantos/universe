@@ -1,17 +1,11 @@
-@each $value in $flex-display {
-  .#{$prefix + $value} {
-    display: $value;
-  }
-}
-
 @each $name, $value in $flex-justify {
-  .#{$prefix}justify-#{$name} {
+  .#{$flex-prefix}justify#{$flex-separator}#{$name} {
     justify-content: $value;
   }
 }
 
 @each $name, $value in $flex-align-items {
-  .#{$prefix}align-items-#{$name} {
+  .#{$flex-prefix}align-items#{$flex-separator}#{$name} {
     align-items: $value;
   }
 }
