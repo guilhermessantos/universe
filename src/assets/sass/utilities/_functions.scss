@@ -1,3 +1,0 @@
-@function contains-default($text1, $hyphen: '', $text2: default) {
-  @return if($text1 == $text2, '', $hyphen + $text1)
-};
