@@ -1,6 +1,7 @@
 const sass = require('node-sass')
 const sassUtils = require('node-sass-utils')(sass)
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const { join } = require('path')
@@ -53,8 +54,10 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Universe',
-      template: join(paths.src, 'index.html')
+      template: join(paths.src, 'index.html'),
+      excludeAssets: [/vue.js/, /style.js/, /main.css/]
     }),
+    new HtmlWebpackExcludeAssetsPlugin(),
     new VueLoaderPlugin()
   ]
 }
