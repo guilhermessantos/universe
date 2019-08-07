@@ -20,9 +20,11 @@
   "homepage": "https://github.com/guilhermessantos/universe#readme",
   "devDependencies": {
     "css-loader": "^2.1.1",
+    "html-webpack-exclude-assets-plugin": "^0.0.7",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.6.0",
     "node-sass-utils": "^1.1.2",
+    "remove-files-webpack-plugin": "^1.1.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "vue-loader": "^15.7.0",
