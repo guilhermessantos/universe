@@ -7,7 +7,7 @@
       <Example>
         <div
           v-for="(name, value, index) in variable.weight"
-          :key="index"
+          :key="value + index"
           :class="variable.prefix + value"
         >
           {{ value }} - Lorem ipsum dolor sit amet.
@@ -17,7 +17,7 @@
 
         <div
           v-for="(value, index) in variable.transform"
-          :key="index"
+          :key="value + index"
           :class="variable.prefix + value"
         >
           {{ value }} - Lorem ipsum dolor sit amet.
@@ -27,7 +27,7 @@
 
         <div
           v-for="(value, index) in variable.align"
-          :key="index"
+          :key="value + index"
           :class="variable.prefix + value"
         >
           {{ value }} - Lorem ipsum dolor sit amet.
