@@ -74,19 +74,6 @@
   }
 }
 
-
-/* .un-box-padding {
-  @extend %item;
-  display: inline-block;
-  margin: $margin-box;
-  width: 70px;
-  height: 70px;
-
-  span {
-    display: inline-block;
-  }
-} */
-
 .un-item {
   @extend %item;
   padding: 10px;
