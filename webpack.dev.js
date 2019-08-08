@@ -17,7 +17,8 @@ module.exports = {
   module: {
     rules: [
       common.sassLoader,
-      common.vueLoader
+      common.vueLoader,
+      common.svgLoader
     ]
   },
 
