@@ -1,5 +1,9 @@
 <template>
   <div>
+    <Category title="Icons">
+      <Icons :variable="icons"></Icons>
+    </Category>
+
     <Category title="Colors">
       <Color :variable="variables.color"></Color>
       <Color :variable="variables.theme" type="theme"></Color>
@@ -41,6 +45,7 @@
 
 <script>
   import variables from './assets/javascripts/variables'
+  import { icons } from './assets/svg/'
 
   import Grid from './components/sections/grid.vue'
   import SectionInfo from './components/section/section-info.vue'
@@ -53,12 +58,14 @@
   import Flex from './components/sections/flex.vue'
   import TextSection from './components/sections/text.vue'
   import Rounded from './components/sections/rounded.vue'
+  import Icons from './components/sections/icons.vue'
   import Category from './components/category/category.vue'
 
   export default {
     data() {
       return {
-        variables: variables,
+        variables,
+        icons
       }
     },
     components: {
@@ -73,6 +80,7 @@
       Flex,
       TextSection,
       Rounded,
+      Icons,
       Category
     }
   }
