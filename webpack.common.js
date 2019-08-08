@@ -3,6 +3,7 @@ const sassUtils = require('node-sass-utils')(sass)
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const SpritePlugin = require('svg-sprite-loader/plugin');
 
 const { join } = require('path')
 
@@ -46,6 +47,14 @@ const config = {
     loader: 'vue-loader'
   },
 
+  svgLoader: {
+    test: /\.svg$/,
+    loader: 'svg-sprite-loader',
+    options: {
+      extract: true
+    }
+  },
+
   output: {
     path: paths.dist,
     filename: 'bundle.js'
@@ -58,7 +67,8 @@ const config = {
       excludeAssets: [/vue.js/, /style.js/, /main.css/]
     }),
     new HtmlWebpackExcludeAssetsPlugin(),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new SpritePlugin({ plainSprite: true })
   ]
 }
 
