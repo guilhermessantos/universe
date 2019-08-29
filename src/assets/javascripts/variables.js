@@ -150,16 +150,19 @@ module.exports = {
   },
 
   breakpoint: {
-    'small': 577,
-    'medium': 769,
-    'large': 993,
-    'xlarge': 1201
+    'prefix': `${config['prefix-modifier']}`,
+    'size': {
+      'sm': 577,
+      'md': 769,
+      'lg': 993,
+      'xlg': 1201
+    }
   },
 
   grid: {
-    'col': 8,
+    'col': 6,
     'gutter': 30,
-    'container': '1140px'
+    'container': 1140
   },
 
   text: {
