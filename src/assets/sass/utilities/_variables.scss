@@ -42,7 +42,8 @@ $padding-separator: get('padding.separator');
 $padding-position: get('padding.position');
 $padding-size: get('padding.size');
 
-$breakpoint: get('breakpoint');
+$breakpoint-prefix: get('breakpoint.prefix');
+$breakpoint-size: get('breakpoint.size');
 
 $text-prefix: get('text.prefix');
 $text-size: get('text.size');
