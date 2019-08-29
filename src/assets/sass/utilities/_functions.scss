@@ -1,3 +1,30 @@
 @function contains-default($text1, $hyphen: '', $text2: default) {
   @return if($text1 == $text2, '', $hyphen + $text1)
 };
+
+@function remove-unit( $number ) {
+	$unit: unit( $number );
+	$one: 1;
+
+	@if $unit == 'px' { $one: 1px; }
+	@if $unit == 'em' { $one: 1px; }
+	@if $unit == '%'  { $one: 1px; }
+
+	@return $number / $one;
+}
+
+@function flex( $target, $context, $unit: 'em' ) {
+	$size: remove-unit( $target ) / remove-unit( $context );
+
+	@if $unit == 'em' {
+		@return #{$size}em;
+	}
+
+	@if $unit == '%' {
+		@return percentage( $size );
+	}
+}
+
+@function perc( $target, $context ) {
+	@return flex( $target, $context, '%' );
+}
