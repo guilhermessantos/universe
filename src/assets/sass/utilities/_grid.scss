@@ -1,8 +1,27 @@
-@for $i from 1 through $grid-col {
-  .#{$prefix-modifier + $i} {
-    flex: 0 0 (100% / $i);
-    max-width: (100% / $i);
+@mixin grid($prefix-grid: '', $size: '') {
+  @if $size != '' {
+    @media (min-width: #{$size}px) {
+      @for $i from 1 through $grid-col {
+        .#{$prefix}col.#{$breakpoint-prefix}#{$prefix-grid}-#{($grid-col - $i + 1)} {
+          $size: $grid-container / $grid-col * ($grid-col - $i + 1);
+          width: perc($size, $grid-container);
+        }
+      }
+    }
+  } @else {
+    @for $i from 1 through $grid-col {
+      .#{$prefix}col.#{$breakpoint-prefix}#{($grid-col - $i + 1)} {
+        $size: $grid-container / $grid-col * ($grid-col - $i + 1);
+        width: perc($size, $grid-container);
+      }
+    }
   }
+}
+
+@include grid();
+
+@each $name, $value in $breakpoint-size {
+  @include grid($name, $value);
 }
 
 .#{$prefix}container,
@@ -14,7 +33,7 @@
 .#{$prefix}container {
   margin-left: auto;
   margin-right: auto;
-  max-width: $grid-container;
+  max-width: #{$grid-container}px;
 }
 
 .#{$prefix}row {
