@@ -11,7 +11,7 @@
 
     <Category title="Layout">
       <Grid :variable="variables.grid" :prefix="variables.config"></Grid>
-      <SectionInfo :variable="variables.breakpoint" title="Breakpoint" informationProps="Size">
+      <SectionInfo :variable="variables.breakpoint.size" title="Breakpoint" informationProps="Size">
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed, praesentium.
         </p>
