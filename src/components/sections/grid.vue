@@ -23,8 +23,8 @@
     <div class="un-section__full">
       <Example>
         <div v-for="row in variable.col" :key="row" :class="prefix.prefix + 'row'">
-          <div v-for="col in row" :key="col" :class="prefix.prefix + 'col ' + prefix['prefix-modifier'] + row">
-            <span class="un-box-grid">Column</span>
+          <div :class="prefix.prefix + 'col ' + prefix['prefix-modifier'] + row">
+            <span class="un-box-grid">{{row}}</span>
           </div>
         </div>
       </Example>
