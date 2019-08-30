@@ -7,6 +7,11 @@ $grid-container: get('grid.container');
 $prefix: get('config.prefix');
 $prefix-modifier: get('config.prefix-modifier');
 
+$sizes-prefix: get('sizes.prefix');
+$sizes-size: get('sizes.size');
+$sizes-position: get('sizes.position');
+$sizes-separator: get('sizes.separator');
+
 $border-prefix-position: get('border.prefix-position');
 $border-prefix-size: get('border.prefix-size');
 $border-position: get('border.position');

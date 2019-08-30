@@ -98,6 +98,19 @@ module.exports = {
     ]
   },
 
+  sizes: {
+    'prefix': `${config['prefix-modifier']}`,
+    'separator': '-',
+    'position': {
+      'width': 'w',
+      'height': 'h',
+    },
+    'size': [
+      50,
+      100
+    ]
+  },
+
   flex: {
     'prefix': `${config['prefix-modifier']}`,
     'separator': '-',

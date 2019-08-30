@@ -1,0 +1,7 @@
+@each $name, $value in $sizes-position {
+  @each $size-value in $sizes-size {
+    .#{$sizes-prefix}#{$value}#{$sizes-separator}#{$size-value} {
+      #{$name}: $size-value * 1%;
+    }
+  }
+}
