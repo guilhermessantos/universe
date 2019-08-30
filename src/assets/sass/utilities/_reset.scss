@@ -16,6 +16,9 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
+}
+
+body {
+  font-family: '#{map-get($typography, 'primary')}', sans-serif;
 }

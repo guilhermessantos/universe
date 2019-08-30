@@ -1,6 +1,6 @@
 const typography = {
-  primary: 'Arial, sans-serif',
-  secondary: 'Arial, sans-serif',
+  primary: 'Arial',
+  secondary: 'Arial',
 }
 
 const config = {
