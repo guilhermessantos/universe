@@ -1,13 +1,11 @@
-import facebook from './facebook.svg'
-import instagram from './instagram.svg'
-import twitter from './twitter.svg'
-import github from './github.svg'
+import calendar from './calendar.svg'
+import cross from './cross.svg'
+import arrowRight from './arrow-right.svg'
 
 const icons = [
-  facebook,
-  instagram,
-  twitter,
-  github
+  calendar,
+  cross,
+  arrowRight
 ]
 
 export { icons }
