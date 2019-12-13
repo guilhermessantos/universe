@@ -1,5 +1,0 @@
-@each $name, $value in $color {
-  .#{$color-prefix + $name} {
-    color: $value;
-  }
-}
