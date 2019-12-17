@@ -1,0 +1,8 @@
+$rounded-prefix: get('roundedCSS.prefix');
+$rounded-size: get('roundedCSS.size');
+
+@each $name, $value in $rounded-size {
+  .#{$rounded-prefix + $name} {
+    border-radius: $value;
+  }
+}
