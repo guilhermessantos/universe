@@ -1,0 +1,19 @@
+$margin-prefix: get('marginCSS.prefix');
+$margin-position: get('marginCSS.position');
+$margin-size: get('marginCSS.size');
+
+@each $name, $value in $margin-position {
+  @each $name-size, $value-size in $margin-size {
+    .#{$margin-prefix + $name-size} {
+      @if $name == vertical {
+        margin-bottom: $value-size;
+        margin-top: $value-size;
+      } @else if $name == horizontal {
+        margin-left: $value-size;
+        margin-right: $value-size;
+      } @else {
+        margin#{contains-default($name, '-')}: $value-size;
+      }
+    }
+  }
+}
