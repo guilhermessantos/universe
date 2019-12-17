@@ -1,0 +1,13 @@
+$heading-size: get('headingCSS.size');
+$heading-css: get('headingCSS.css');
+$heading-prefix: get('headingCSS.prefix');
+$heading-prefix-size: get('headingCSS.prefix-size');
+
+@each $name, $value in $heading-size {
+  .#{$heading-prefix-size + $name} {
+    font-size: $value;
+  }
+}
+
+@include handleCss($heading-prefix, $heading-css)
+
