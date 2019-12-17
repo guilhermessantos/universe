@@ -1,0 +1,16 @@
+$flex-prefix-align: get('flex.prefix.align');
+$flex-prefix-justify: get('flex.prefix.justify');
+$flex-justify: get('flex.justify');
+$flex-align: get('flex.align');
+
+@each $name, $value in $flex-justify {
+  .#{$flex-prefix-justify + $name} {
+    justify-content: $value;
+  }
+}
+
+@each $name, $value in $flex-align {
+  .#{$flex-prefix-align + $name} {
+    align-items: $value;
+  }
+}
