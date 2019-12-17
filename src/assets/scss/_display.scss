@@ -1,0 +1,8 @@
+$display-prefix: get('display.prefix');
+$display: get('display.list');
+
+@each $value in $display {
+  .#{$display-prefix + $value} {
+    display: $value;
+  }
+}
