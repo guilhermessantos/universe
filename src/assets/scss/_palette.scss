@@ -1,0 +1,11 @@
+$palette: get('paletteCSS.list');
+$palette-prefix: get('paletteCSS.prefix');
+
+@each $name, $value in $palette {
+  @each $_name, $_value in $value {
+    .#{$palette-prefix + $name}#{contains-default($_name, '-', 'base')},
+    .#{$palette-prefix + $name}#{contains-default($_name, '-', 'base')}:hover {
+      background-color: $_value;
+    }
+  }
+}
