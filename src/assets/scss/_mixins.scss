@@ -1,0 +1,7 @@
+@mixin handleCss($class, $obj) {
+  .#{$class} {
+    @each $name, $value in $obj {
+      #{$name}: #{$value}
+    }
+  }
+}
