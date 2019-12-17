@@ -1,0 +1,16 @@
+$border-prefix-position: get('borderCSS.prefix-position');
+$border-prefix-size: get('borderCSS.prefix-size');
+$border-position: get('borderCSS.position');
+$border-size: get('borderCSS.size');
+
+@each $name, $value in $border-position {
+  .#{$border-prefix-position + contains-default($value)} {
+    border#{contains-default($name, '-')}-style: solid;
+  }
+}
+
+@each $name, $value in $border-size {
+  .#{$border-prefix-size + $name} {
+    border-width: $value;
+  }
+}
