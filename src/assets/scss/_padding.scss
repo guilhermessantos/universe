@@ -1,0 +1,19 @@
+$padding-prefix: get('paddingCSS.prefix');
+$padding-position: get('paddingCSS.position');
+$padding-size: get('paddingCSS.size');
+
+@each $name, $value in $padding-position {
+  @each $name-size, $value-size in $padding-size {
+    .#{$padding-prefix + contains-default($value) + $name-size} {
+      @if $name == vertical {
+        padding-bottom: $value-size;
+        padding-top: $value-size;
+      } @else if $name == horizontal {
+        padding-left: $value-size;
+        padding-right: $value-size;
+      } @else {
+        padding#{contains-default($name, '-')}: $value-size;
+      }
+    }
+  }
+}
