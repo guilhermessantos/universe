@@ -1,0 +1,8 @@
+$color: get('colorCSS.list');
+$color-prefix: get('colorCSS.prefix');
+
+@each $name, $value in $color {
+  .#{$color-prefix + $name} {
+    color: $value;
+  }
+}
