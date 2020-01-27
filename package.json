@@ -17,7 +17,9 @@
     "node-sass-utils": "^1.1.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "styled-components": "^4.4.1"
+    "react-highlight.js": "^1.0.7",
+    "styled-components": "^4.4.1",
+    "tinycolor2": "^1.4.1"
   },
   "devDependencies": {}
 }
