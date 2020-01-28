@@ -1,5 +1,0 @@
-@each $name, $value in $rounded {
-  .#{$rounded-prefix}#{$name} {
-    border-radius: $value;
-  }
-}

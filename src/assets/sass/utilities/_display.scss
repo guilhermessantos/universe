@@ -1,5 +1,0 @@
-@each $value in $display {
-  .#{$display-prefix}#{$value} {
-    display: $value;
-  }
-}
