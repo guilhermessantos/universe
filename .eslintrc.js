@@ -32,6 +32,9 @@ module.exports = {
       { extensions: ['.jsx', '.js'] }
     ],
     'import/prefer-default-export': 'off',
-    'no-plusplus': 'off'
+    'no-plusplus': 'off',
+    'no-use-before-define': 'off',
+    'react/forbid-prop-types': 'off',
+    'no-unused-expressions': 'off'
   },
 };
