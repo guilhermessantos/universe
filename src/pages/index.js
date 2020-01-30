@@ -25,7 +25,11 @@ const App = () => {
 
   return (
     <>
-      <Navigation handlePagination={handlePagination} listMenu={menu} />
+      <Navigation
+        handlePagination={handlePagination}
+        pagination={pagination}
+        listMenu={menu}
+      />
 
       <ReactPageScroller
         blockScrollDown

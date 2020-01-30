@@ -7,9 +7,11 @@ export const Container = styled(Wrap)`
 `
 
 export const Content = styled.div`
+  align-items: flex-start;
   position: fixed;
   top: 150px;
   justify-content: center;
+  height: calc(100vh - 150px);
   display: flex;
   flex-wrap: wrap;
   width: 55px;
@@ -18,6 +20,8 @@ export const Content = styled.div`
 export const Buttons = styled.div`
   border: 1px solid #42153c;
   border-radius: 20px;
+  opacity: 0;
+  transform: translateY(-15px);
   width: 30px;
 `
 
@@ -88,10 +92,10 @@ export const Button = styled.button`
 
 export const Line = styled.div`
   background: #42153c;
-  height: 100vh;
+  bottom: 0;
+  height: 0;
   content: '';
   position: absolute;
-  top: 100%;
   width: 1px;
 `
 
@@ -101,12 +105,10 @@ export const Menu = styled.div`
   top: 110px;
 `
 
-export const MenuItem = styled.div`
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  font-size: 12px;
-  margin: 20px 0;
+export const Text = styled.span`
+  padding-left: 5px;
+  opacity: 0;
+  transition: opacity 0.3s, padding 0.3s;
 `
 
 export const Bullet = styled.span`
@@ -115,9 +117,30 @@ export const Bullet = styled.span`
   border-radius: 100%;
   display: inline-block;
   height: 15px;
+  opacity: 0;
+  transform: scale(0);
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
   width: 15px;
 `
 
-export const Text = styled.span`
-  padding-left: 5px;
+export const MenuItem = styled.div`
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  margin: 20px 0;
+
+  &:hover ${Bullet} {
+    background: #ed3947;
+  }
+
+  &.active ${Text}, &:hover ${Text} {
+    opacity: 1;
+    padding-left: 10px;
+  }
+
+  &.active ${Bullet} {
+    background: #ed3947;
+    box-shadow: 0 0 0 2px #42153c;
+  }
 `

@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { TweenMax } from 'gsap'
+import React, { useState, useRef, useEffect } from 'react'
+import { TweenMax, TimelineLite } from 'gsap'
 import * as S from './styles'
 
 import Star from '../../images/star.svg'
 
 const Stars = () => {
+  const elStars = useRef(null)
   const [stars, setStars] = useState([])
   const [starsLast, setStarsLast] = useState([])
 
@@ -19,6 +20,7 @@ const Stars = () => {
   }, [])
 
   useEffect(() => {
+    const timeline = new TimelineLite()
     const listStars = document.querySelectorAll('.star')
     const listStarsLast = document.querySelectorAll('.star-last')
     const animation = {
@@ -28,6 +30,16 @@ const Stars = () => {
     }
 
     if (listStars.length) {
+      timeline.to(
+        elStars.current,
+        0.7,
+        {
+          opacity: 1,
+          y: -150,
+        },
+        '=+2'
+      )
+
       TweenMax.staggerFrom(listStars, 0.2, animation, 0.2)
       TweenMax.staggerFrom(
         listStarsLast,
@@ -64,7 +76,7 @@ const Stars = () => {
   }
 
   return (
-    <S.Container>
+    <S.Container ref={elStars}>
       {stars.map(item => item)}
       {starsLast.map(item => item)}
     </S.Container>

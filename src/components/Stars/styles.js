@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  bottom: 0;
   position: absolute;
-  bottom: 150px;
+  opacity: 0;
 
   svg {
     display: inline-block;

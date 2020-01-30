@@ -1,10 +1,15 @@
 import styled, { css } from 'styled-components'
+import { Button } from '../Button'
 
 export const Container = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
   padding: 30px 0 0;
+
+  ${Button} {
+    opacity: 0;
+  }
 `
 
 export const Col = styled.div`
@@ -25,7 +30,9 @@ export const Col = styled.div`
 
 export const Branding = styled.div`
   height: 55px;
+  opacity: 0;
   position: relative;
+  transform: translateY(100px);
   width: 55px;
 
   span {
@@ -64,6 +71,7 @@ export const Branding = styled.div`
 
 export const Menu = styled.ul`
   list-style: none;
+  opacity: 0;
 `
 
 export const MenuItem = styled.li`
