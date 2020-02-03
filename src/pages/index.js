@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ReactPageScroller from 'react-page-scroller'
 import GlobalStyle from '../styles/global'
 import { Navigation } from '../components/Navigation'
-import SectionHeader from '../sections/SectionHeader'
+import SectionHeading from '../sections/SectionHeading'
 
 const menu = ['Home', 'Typography', 'Palette']
 
@@ -37,7 +37,8 @@ const App = () => {
         transitionTimingFunction="ease"
         customPageNumber={pagination}
       >
-        <SectionHeader />
+        <SectionHeading />
+
         <div className="section">section</div>
         <div className="section">section</div>
       </ReactPageScroller>
