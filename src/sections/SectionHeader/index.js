@@ -12,6 +12,7 @@ import Rocket from '../../images/rocket.svg'
 const SectionHeader = () => {
   const title = useRef(null)
   const info = useRef(null)
+  const elMeteor = useRef(null)
   const elPlanetSmall = useRef(null)
   const elPlanetLarge = useRef(null)
   const elRocket = useRef(null)
@@ -61,6 +62,17 @@ const SectionHeader = () => {
         repeat: -1,
         yoyo: true,
       })
+      .to(
+        elMeteor.current,
+        0.7,
+        {
+          x: -600,
+          y: 600,
+          opacity: 1,
+        },
+        `=-${time + 3}`
+      )
+      .to(elMeteor.current, 0.3, { opacity: 0 }, '=-.2')
   }, [])
 
   return (
@@ -89,6 +101,8 @@ const SectionHeader = () => {
       </S.Images>
 
       <Stars />
+
+      <S.Meteor ref={elMeteor} />
     </S.Section>
   )
 }

@@ -48,3 +48,25 @@ export const Images = styled.div`
     z-index: 1;
   }
 `
+
+export const Meteor = styled.div`
+  position: absolute;
+  top: 10%;
+  left: 60%;
+  width: 400px;
+  height: 1px;
+  transform: rotate(-45deg) translate(0, 0);
+  opacity: 0;
+  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 5px;
+    border-radius: 50%;
+    margin-top: -2px;
+    background: rgba(#fff, 0.5);
+    box-shadow: 0 0 15px 3px #fff;
+  }
+`
