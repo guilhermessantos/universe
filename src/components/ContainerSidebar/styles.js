@@ -6,12 +6,13 @@ export const Container = styled.div`
   border-radius: 10px;
   padding: 30px 30px 0;
   position: relative;
+  overflow: hidden;
   width: 270px;
 
   &::before {
     background: #ed3947;
     border-radius: 10px;
-    bottom: -30px;
+    bottom: 0;
     content: '';
     left: 0;
     min-width: 100px;
@@ -55,7 +56,7 @@ export const Item = styled.div`
   &::before {
     content: '';
     position: absolute;
-    right: -31px;
+    right: -30px;
     top: 50%;
     height: ${props => (props.active ? '100%' : 0)};
     width: 1px;

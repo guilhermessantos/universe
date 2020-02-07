@@ -8,7 +8,7 @@ const ContainerSidebar = ({ data, active, handleMenu }) => (
       <S.Item
         key={item}
         active={active === data[item]}
-        onClick={() => handleMenu(data[item])}
+        onClick={() => handleMenu && handleMenu(data[item])}
       >
         <S.Key>{item}</S.Key>
         <S.Value>{data[item]}</S.Value>
@@ -19,8 +19,8 @@ const ContainerSidebar = ({ data, active, handleMenu }) => (
 
 ContainerSidebar.propTypes = {
   data: t.object.isRequired,
-  active: t.object.isRequired,
-  handleMenu: t.func.isRequired,
+  active: t.object,
+  handleMenu: t.func,
 }
 
 export { ContainerSidebar }
