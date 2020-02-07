@@ -3,21 +3,26 @@ import { Container, Content } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { BoxTypography } from '../../components/BoxTypography'
 
-const menu = {
+const data = {
   primary: 'Arial',
   secondary: 'Montserrat',
   tert: 'Comic Sans MS',
 }
 
 const SectionTypography = () => {
-  const [active, setActive] = useState(Object.values(menu)[0])
+  const [active, setActive] = useState(Object.values(data)[0])
 
   return (
     <Container>
-      <ContainerHeader data={menu} handleMenu={setActive} active={active} />
+      <ContainerHeader
+        title="Typography"
+        data={data}
+        handleMenu={setActive}
+        active={active}
+      />
 
-      <Content>
-        <BoxTypography styleFont={active} />
+      <Content sidebar>
+        <BoxTypography data={data} active={active} />
       </Content>
     </Container>
   )
