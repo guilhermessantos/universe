@@ -1,7 +1,18 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  height: 100%;
+  position: relative;
+  width: 100%;
+`
+
+export const Item = styled.div`
   display: flex;
+  opacity: ${props => (props.hidden ? 1 : 0)};
+  transition: opacity 0.3s, transform 0.3s;
+  transform: ${props => `scale(${props.hidden ? 1 : 0.5}) translateY(-50%)`};
+  position: absolute;
+  top: 50%;
 `
 
 export const Content = styled.div`
