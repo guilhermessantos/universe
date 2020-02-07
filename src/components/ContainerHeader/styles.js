@@ -1,19 +1,44 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { Title } from '../Title'
 
 export const Container = styled.div`
-  margin: 70px 0 60px auto;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+  margin: 0 0 0 auto;
   max-width: 900px;
-  min-height: 125px;
+  min-height: 25vh;
   position: relative;
+  z-index: 2;
+
+  ${Title} {
+    padding-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  ${props =>
+    props.shadow &&
+    css`
+      &::before {
+        box-shadow: 0 50px 100px 150px #0f081e;
+        content: '';
+        height: 0px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+      }
+    `}
 `
 
 export const Menu = styled.div`
   display: inline-block;
   background: #0f081e;
-  margin-top: 20px;
   padding-right: 30px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 `
 
 export const MenuItem = styled.span`
@@ -79,5 +104,5 @@ export const Line = styled.div`
   position: absolute;
   height: 1px;
   left: 0;
-  width: 100%;
+  width: 150%;
 `

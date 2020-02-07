@@ -3,8 +3,8 @@ import t from 'prop-types'
 import { Title } from '../Title'
 import * as S from './styles'
 
-const ContainerHeader = ({ title, data, handleMenu, active }) => (
-  <S.Container>
+const ContainerHeader = ({ title, data, handleMenu, active, shadow }) => (
+  <S.Container shadow={shadow}>
     <Title>{title}</Title>
 
     {data && (
@@ -28,6 +28,7 @@ const ContainerHeader = ({ title, data, handleMenu, active }) => (
 
 ContainerHeader.propTypes = {
   data: t.object,
+  shadow: t.bool,
   handleMenu: t.func,
   title: t.string.isRequired,
   active: t.string,
