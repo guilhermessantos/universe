@@ -11,9 +11,11 @@ export const Content = styled.div`
   position: fixed;
   top: 150px;
   justify-content: center;
-  height: calc(100vh - 150px);
   display: flex;
+  height: 100%;
   flex-wrap: wrap;
+  transition: transform 0.3s;
+  transform: ${props => props.active && `translateY(-100px)`};
   width: 55px;
 `
 
@@ -22,23 +24,30 @@ export const Buttons = styled.div`
   border-radius: 20px;
   opacity: 0;
   transform: translateY(-15px);
+  overflow: hidden;
   width: 30px;
+  z-index: 2;
 `
 
 export const Button = styled.button`
-  background: transparent;
+  background: #0f081e;
   color: #ed3947;
   cursor: pointer;
   border: 0;
   overflow: hidden;
   height: 50px;
+  transition: background 0.3s;
   width: 100%;
 
-  &:hover svg {
-    opacity: 0;
+  &:hover {
+    background: #42153c;
 
-    &:last-child {
-      opacity: 1;
+    svg {
+      opacity: 0;
+
+      &:last-child {
+        opacity: 1;
+      }
     }
   }
 
@@ -92,11 +101,11 @@ export const Button = styled.button`
 
 export const Line = styled.div`
   background: #42153c;
-  bottom: 0;
   height: 0;
   content: '';
   position: absolute;
   width: 1px;
+  top: 0;
 `
 
 export const Menu = styled.div`
