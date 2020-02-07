@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react'
 import clsx from 'clsx'
 import t from 'prop-types'
+import { FaArrowUp, FaArrowDown } from 'react-icons/fa'
 import * as S from './styles'
 
 const { createRef } = React
 
-const Carousel = ({ data, quant }) => {
-  const elementsRef = useRef(data.map(() => createRef()))
+const Carousel = ({ data, quant, color }) => {
+  const elementsRef = useRef(Object.keys(data).map(() => createRef()))
   const quantItems = quant
   const totalItems = elementsRef.current.length
   const totalPagination = totalItems / quant
@@ -26,7 +27,7 @@ const Carousel = ({ data, quant }) => {
   useEffect(() => {
     const item = elementsRef.current[0].current
     const size = {
-      width: quantItems * item.offsetWidth,
+      width: quantItems * (item.offsetWidth + 20),
       height: item.offsetHeight,
     }
 
@@ -95,39 +96,63 @@ const Carousel = ({ data, quant }) => {
   }
 
   return (
-    <>
-      <S.Container
+    <S.Container>
+      <S.Content
         style={{
           transform: `translateY(${sizeContainer.height -
             sizeContainerInitial.height}px)`,
           width: `${sizeContainer.width}px`,
         }}
       >
-        {data.map((item, index) => (
+        {Object.keys(data).map((item, index) => (
           <S.Item
             key={item}
             ref={elementsRef.current[index]}
+            data-text={item}
             className={clsx({
               active: index < quantItems,
               next: index >= quantItems && index < quantItems * 2,
             })}
           >
-            {item}
+            {color ? (
+              <S.Color box bg={data[item]} style={{ background: data[item] }}>
+                {data[item]}
+              </S.Color>
+            ) : (
+              Object.values(data[item]).map(itemColor => (
+                <S.Color bg={itemColor} style={{ background: itemColor }}>
+                  {itemColor}
+                </S.Color>
+              ))
+            )}
           </S.Item>
         ))}
-      </S.Container>
+      </S.Content>
 
       <S.Buttons>
-        <S.Button type="button" onClick={() => handlePaginationPrev()} />
-        <S.Button type="button" onClick={() => handlePaginationNext()} />
+        <S.Button
+          type="button"
+          active={pagination > 1}
+          onClick={() => handlePaginationPrev()}
+        >
+          <FaArrowUp />
+        </S.Button>
+        <S.Button
+          active={totalPagination > pagination}
+          type="button"
+          onClick={() => handlePaginationNext()}
+        >
+          <FaArrowDown />
+        </S.Button>
       </S.Buttons>
-    </>
+    </S.Container>
   )
 }
 
 Carousel.propTypes = {
   data: t.shape([]).isRequired,
   quant: t.number.isRequired,
+  color: t.bool,
 }
 
 export { Carousel }
