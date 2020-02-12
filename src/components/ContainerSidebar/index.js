@@ -19,7 +19,7 @@ const ContainerSidebar = ({ data, active, handleMenu }) => (
 
 ContainerSidebar.propTypes = {
   data: t.object.isRequired,
-  active: t.object,
+  active: t.string,
   handleMenu: t.func,
 }
 

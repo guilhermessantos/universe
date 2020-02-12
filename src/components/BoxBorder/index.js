@@ -7,7 +7,7 @@ const BoxBorder = ({ style, position }) => (
 )
 
 BoxBorder.propTypes = {
-  style: t.string,
+  style: t.object,
   position: t.string,
 }
 
