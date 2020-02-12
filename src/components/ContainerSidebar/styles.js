@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
   font-size: 14px;
@@ -48,10 +48,19 @@ export const Value = styled.div`
 `
 
 export const Item = styled.div`
-  cursor: pointer;
   position: relative;
   display: flex;
   z-index: 1;
+
+  ${props =>
+    props.value &&
+    css`
+      cursor: pointer;
+
+      &:hover ${Value} {
+        padding-right: 10px;
+      }
+    `}
 
   &::before {
     content: '';
@@ -67,10 +76,6 @@ export const Item = styled.div`
 
   &:last-child ${Value} {
     border: 0;
-  }
-
-  &:hover ${Value} {
-    padding-right: ${props => (props.active ? 0 : '10px')};
   }
 
   ${Value} {
