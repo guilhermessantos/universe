@@ -1,10 +1,11 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Button = styled.a`
   background: #0f081e;
   border: 1px solid currentColor;
   border-radius: 20px;
   color: #ed3947;
+  cursor: pointer;
   display: inline-block;
   font-size: 14px;
   padding: 8px 30px;
@@ -28,13 +29,17 @@ const Button = styled.a`
     width: 100%;
   }
 
-  &:hover {
-    color: #b43583;
+  ${props =>
+    props['data-text'] &&
+    css`
+      &:hover {
+        color: #b43583;
 
-    &::after {
-      transform: translateY(calc(100% + 1px));
-    }
-  }
+        &::after {
+          transform: translateY(calc(100% + 1px));
+        }
+      }
+    `}
 `
 
 export { Button }
