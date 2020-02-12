@@ -120,7 +120,11 @@ const Carousel = ({ data, quant, color }) => {
               </S.Color>
             ) : (
               Object.values(data[item]).map(itemColor => (
-                <S.Color bg={itemColor} style={{ background: itemColor }}>
+                <S.Color
+                  bg={itemColor}
+                  key={itemColor}
+                  style={{ background: itemColor }}
+                >
                   {itemColor}
                 </S.Color>
               ))
