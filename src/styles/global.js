@@ -16,4 +16,8 @@ export default createGlobalStyle`
     font: 16px/1.2 'Roboto', sans-serif;
     overflow: hidden;
   }
+
+  .frame {
+    max-width: 100%;
+  }
 `

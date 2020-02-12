@@ -1,5 +1,5 @@
 export default {
-  col: 4,
+  col: 12,
   gutter: 30,
   container: 1140,
 }

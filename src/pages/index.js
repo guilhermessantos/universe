@@ -11,8 +11,9 @@ import SectionTextSize from '../sections/SectionTextSize'
 import SectionHeading from '../sections/SectionHeading'
 import SectionColor from '../sections/SectionColor'
 import SectionTypography from '../sections/SectionTypography'
-import SectionPalette from '../sections/SectionPalette'
+import SectionThemes from '../sections/SectionThemes'
 import SectionBorder from '../sections/SectionBorder'
+import SectionGrid from '../sections/SectionGrid'
 
 const menu = [
   'Home',
@@ -20,8 +21,9 @@ const menu = [
   'Text Size',
   'Heading',
   'Breakpoint',
-  'Palette',
+  'Grid',
   'Color',
+  'Themes',
   'Border',
   'Margin',
   'Padding',
@@ -30,6 +32,7 @@ const menu = [
 
 const App = () => {
   const [pagination, setPagination] = useState(0)
+  const [exampleGrid, setExampleGrid] = useState(false)
 
   const handlePagination = (action, index) => {
     if (action === 'prev' && !!pagination) {
@@ -45,6 +48,15 @@ const App = () => {
     }
   }
 
+  const handleGrid = () => {
+    setExampleGrid(!exampleGrid)
+  }
+
+  const x = {
+    color: <SectionColor />,
+    gridx: <SectionGrid handleGrid={handleGrid} active={exampleGrid} />,
+  }
+
   return (
     <>
       <Navigation
@@ -52,6 +64,7 @@ const App = () => {
         pagination={pagination}
         listMenu={menu}
         home={!!pagination}
+        hide={exampleGrid}
       />
 
       <ReactPageScroller
@@ -59,14 +72,16 @@ const App = () => {
         blockScrollUp
         transitionTimingFunction="ease"
         customPageNumber={pagination}
+        renderAllPagesOnFirstRender
       >
         <SectionHeader />
         <SectionTypography />
         <SectionTextSize />
         <SectionHeading />
         <SectionBreakpoint />
-        <SectionPalette />
+        <SectionGrid handleGrid={handleGrid} active={exampleGrid} />
         <SectionColor />
+        <SectionThemes />
         <SectionBorder />
         <SectionMargin />
         <SectionPadding />
