@@ -2,19 +2,19 @@ import React, { useState } from 'react'
 import { Container, Content, Example } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
+import config from '../../../config'
 
-const textSize = require('../../../config/text-size.js').default
-const typographys = require('../../../config/typographys').default
+const { textSize, typographies } = config
 
 const SectionTextSize = () => {
-  const [active, setActive] = useState(Object.values(typographys)[0])
+  const [active, setActive] = useState(Object.values(typographies)[0])
   const [activeSize, setActiveSize] = useState(Object.values(textSize)[0])
 
   return (
     <Container>
       <ContainerHeader
         title="Text Size"
-        data={typographys}
+        data={typographies}
         active={active}
         handleMenu={setActive}
       />

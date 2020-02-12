@@ -3,7 +3,7 @@ import { Container, Content } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { BoxTypography } from '../../components/BoxTypography'
 
-const tipographys = require('../../../config/typographys').default
+const tipographys = require('../../../config/typographies').default
 
 const SectionTypography = () => {
   const [active, setActive] = useState(Object.values(tipographys)[0])

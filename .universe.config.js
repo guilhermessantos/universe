@@ -9,5 +9,5 @@ module.exports = {
   rounded: require('./config/rounded.js'),
   textSize: require('./config/text-size.js'),
   themes: require('./config/themes.js'),
-  typographys: require('./config/typographys.js'),
+  typographies: require('./config/typographies.js'),
 }

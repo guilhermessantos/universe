@@ -4,7 +4,7 @@ import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
 
 const headings = require('../../../config/headings.js').default
-const tipographys = require('../../../config/typographys').default
+const tipographys = require('../../../config/typographies').default
 
 const SectionHeading = () => {
   const [active, setActive] = useState(Object.values(tipographys)[0])
