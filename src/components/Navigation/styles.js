@@ -4,6 +4,14 @@ import { Container as Wrap } from '../Container'
 export const Container = styled(Wrap)`
   position: relative;
   z-index: 3;
+  transition: opacity 0.6s, transform 0.6s;
+
+  ${props =>
+    props.hide &&
+    css`
+      opacity: 0;
+      transform: translateX(-100px);
+    `}
 `
 
 export const Content = styled.div`

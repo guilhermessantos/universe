@@ -5,7 +5,7 @@ import { TimelineLite } from 'gsap'
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa'
 import * as S from './styles'
 
-const Navigation = ({ handlePagination, listMenu, pagination, home }) => {
+const Navigation = ({ handlePagination, listMenu, pagination, home, hide }) => {
   const [activeMenu, setActiveMenu] = useState(false)
   const elButtons = useRef(null)
   const elLine = useRef(null)
@@ -38,7 +38,7 @@ const Navigation = ({ handlePagination, listMenu, pagination, home }) => {
   }, [])
 
   return (
-    <S.Container>
+    <S.Container hide={hide}>
       <S.Content active={home}>
         <S.Buttons ref={elButtons}>
           <S.Button action="prev" onClick={() => handlePagination('prev')}>
@@ -82,6 +82,7 @@ Navigation.propTypes = {
   listMenu: t.array.isRequired,
   pagination: t.number.isRequired,
   home: t.bool,
+  hide: t.bool,
 }
 
 export { Navigation }
