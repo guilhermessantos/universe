@@ -4,15 +4,10 @@ import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
 import { BoxRounded } from '../../components/BoxRounded'
 
-const size = {
-  small: '5px',
-  medium: '10px',
-  large: '20px',
-  circle: '100%',
-}
+const rounded = require('../../../config/rounded').default
 
 const SectionRounded = () => {
-  const [activeSize, setActiveSize] = useState(Object.values(size)[0])
+  const [activeSize, setActiveSize] = useState(Object.values(rounded)[0])
 
   return (
     <Container>
@@ -20,7 +15,7 @@ const SectionRounded = () => {
 
       <Content sidebar>
         <ContainerSidebar
-          data={size}
+          data={rounded}
           active={activeSize}
           handleMenu={setActiveSize}
         />

@@ -3,18 +3,18 @@ import { Container, Content } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { Carousel } from '../../components/Carousel'
 
-const colors = require('../../../config/colors').default
+const themes = require('../../../config/themes.js').default
 
-const SectionColor = () => {
+const SectionPalette = () => {
   return (
-    <Container>
-      <ContainerHeader title="Colors" />
+    <Container shadow>
+      <ContainerHeader title="Themes" shadow />
 
       <Content>
-        <Carousel data={colors} quant={4} color />
+        <Carousel data={themes} quant={4} />
       </Content>
     </Container>
   )
 }
 
-export default SectionColor
+export default SectionPalette

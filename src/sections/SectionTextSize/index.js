@@ -3,37 +3,25 @@ import { Container, Content, Example } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
 
-const menu = {
-  primary: 'Arial',
-  secondary: 'Montserrat',
-  tert: 'Comic Sans MS',
-}
-
-const size = {
-  default: '18px',
-  'x-small': '12px',
-  small: '14px',
-  medium: '16px',
-  large: '25px',
-  'x-large': '30px',
-}
+const textSize = require('../../../config/text-size.js').default
+const typographys = require('../../../config/typographys').default
 
 const SectionTextSize = () => {
-  const [active, setActive] = useState(Object.values(menu)[0])
-  const [activeSize, setActiveSize] = useState(Object.values(size)[0])
+  const [active, setActive] = useState(Object.values(typographys)[0])
+  const [activeSize, setActiveSize] = useState(Object.values(textSize)[0])
 
   return (
     <Container>
       <ContainerHeader
         title="Text Size"
-        data={menu}
+        data={typographys}
         active={active}
         handleMenu={setActive}
       />
 
       <Content sidebar>
         <ContainerSidebar
-          data={size}
+          data={textSize}
           active={activeSize}
           handleMenu={setActiveSize}
         />

@@ -3,37 +3,25 @@ import { Container, Content, Example } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
 
-const menu = {
-  primary: 'Arial',
-  secondary: 'Montserrat',
-  tert: 'Comic Sans MS',
-}
-
-const size = {
-  h1: '28px',
-  h2: '21px',
-  h3: '18px',
-  h4: '16px',
-  h5: '15px',
-  h6: '14px',
-}
+const headings = require('../../../config/headings.js').default
+const tipographys = require('../../../config/typographys').default
 
 const SectionHeading = () => {
-  const [active, setActive] = useState(Object.values(menu)[0])
-  const [activeSize, setActiveSize] = useState(Object.values(size)[0])
+  const [active, setActive] = useState(Object.values(tipographys)[0])
+  const [activeSize, setActiveSize] = useState(Object.values(headings)[0])
 
   return (
     <Container>
       <ContainerHeader
         title="Heading"
-        data={menu}
+        data={tipographys}
         active={active}
         handleMenu={setActive}
       />
 
       <Content sidebar>
         <ContainerSidebar
-          data={size}
+          data={headings}
           active={activeSize}
           handleMenu={setActiveSize}
         />

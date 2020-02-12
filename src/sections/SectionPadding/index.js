@@ -4,40 +4,27 @@ import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
 import { BoxPadding } from '../../components/BoxPadding'
 
-const position = {
-  default: 'default',
-  bottom: 'b',
-  left: 'l',
-  top: 't',
-  right: 'r',
-}
-
-const size = {
-  'x-small': '4px',
-  small: '8px',
-  medium: '16px',
-  large: '32px',
-  'x-large': '64px',
-}
+const paddingSize = require('../../../config/padding-size').default
+const paddingPosition = require('../../../config/padding-position').default
 
 const SectionPadding = () => {
   const [activePosition, setActivePosition] = useState(
-    Object.values(position)[0]
+    Object.values(paddingPosition)[0]
   )
-  const [activeSize, setActiveSize] = useState(Object.values(size)[0])
+  const [activeSize, setActiveSize] = useState(Object.values(paddingSize)[0])
 
   return (
     <Container>
       <ContainerHeader
         title="Padding"
-        data={position}
+        data={paddingPosition}
         active={activePosition}
         handleMenu={setActivePosition}
       />
 
       <Content sidebar>
         <ContainerSidebar
-          data={size}
+          data={paddingSize}
           active={activeSize}
           handleMenu={setActiveSize}
         />

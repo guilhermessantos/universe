@@ -2,22 +2,20 @@ import React from 'react'
 import { Container, Content, Example } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
+import Responsive from '../../images/responsive.svg'
 
-const breakpoint = {
-  sm: 577,
-  md: 769,
-  lg: 993,
-  xlg: 1201,
-}
+const breakpoints = require('../../../config/breakpoints.js').default
 
 const SectionBreakpoint = () => (
   <Container>
-    <ContainerHeader title="Breakpoint" />
+    <ContainerHeader title="Breakpoints" />
 
     <Content sidebar>
-      <ContainerSidebar data={breakpoint} />
+      <ContainerSidebar data={breakpoints} />
 
-      <Example>SectionBreakpoint</Example>
+      <Example>
+        <Responsive />
+      </Example>
     </Content>
   </Container>
 )
