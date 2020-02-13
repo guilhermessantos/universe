@@ -3,9 +3,7 @@ import { Container, Content } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { Carousel } from '../../components/Carousel'
 
-const colors = require('../../../config/colors').default
-
-const SectionColor = () => {
+const SectionColor = ({ colors }) => {
   return (
     <Container>
       <ContainerHeader title="Colors" />

@@ -8,9 +8,7 @@ import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
 import * as S from './styles'
 
-const grid = require('../../../config/grid.js').default
-
-const SectionGrid = ({ handleGrid, active }) => (
+const SectionGrid = ({ handleGrid, active, grid }) => (
   <S.FullSection>
     <Wrap>
       <ContainerHeader title="Grid" />

@@ -3,9 +3,7 @@ import { Container, Content } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { Carousel } from '../../components/Carousel'
 
-const themes = require('../../../config/themes.js').default
-
-const SectionPalette = () => {
+const SectionPalette = ({ themes }) => {
   return (
     <Container shadow>
       <ContainerHeader title="Themes" shadow />

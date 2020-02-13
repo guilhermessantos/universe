@@ -4,27 +4,24 @@ import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
 import { BoxBorder } from '../../components/BoxBorder'
 
-const borderSize = require('../../../config/border-size.js').default
-const borderPosition = require('../../../config/border-position.js').default
-
-const SectionBorder = () => {
+const SectionBorder = ({ border }) => {
   const [activePosition, setActivePosition] = useState(
-    Object.values(borderPosition)[0]
+    Object.values(border.position)[0]
   )
-  const [activeSize, setActiveSize] = useState(Object.values(borderSize)[0])
+  const [activeSize, setActiveSize] = useState(Object.values(border.size)[0])
 
   return (
     <Container>
       <ContainerHeader
         title="Border"
-        data={borderPosition}
+        data={border.position}
         active={activePosition}
         handleMenu={setActivePosition}
       />
 
       <Content sidebar>
         <ContainerSidebar
-          data={borderSize}
+          data={border.size}
           active={activeSize}
           handleMenu={setActiveSize}
         />

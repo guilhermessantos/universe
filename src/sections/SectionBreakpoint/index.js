@@ -4,9 +4,7 @@ import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
 import Responsive from '../../images/responsive.svg'
 
-const breakpoints = require('../../../config/breakpoints.js').default
-
-const SectionBreakpoint = () => (
+const SectionBreakpoint = ({ breakpoints }) => (
   <Container>
     <ContainerHeader title="Breakpoints" />
 

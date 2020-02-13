@@ -4,9 +4,7 @@ import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
 import { BoxRounded } from '../../components/BoxRounded'
 
-const rounded = require('../../../config/rounded').default
-
-const SectionRounded = () => {
+const SectionRounded = ({ rounded }) => {
   const [activeSize, setActiveSize] = useState(Object.values(rounded)[0])
 
   return (

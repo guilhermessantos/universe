@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "clsx": "^1.0.4",
+    "cosmiconfig": "^6.0.0",
     "gsap": "^3.1.1",
     "next": "^9.2.1",
     "prop-types": "^15.7.2",

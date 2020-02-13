@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import ReactPageScroller from 'react-page-scroller'
+import { cosmiconfigSync } from 'cosmiconfig'
 import GlobalStyle from '../styles/global'
 import { Navigation } from '../components/Navigation'
 import SectionHeader from '../sections/SectionHeader'
@@ -14,6 +16,8 @@ import SectionTypography from '../sections/SectionTypography'
 import SectionThemes from '../sections/SectionThemes'
 import SectionBorder from '../sections/SectionBorder'
 import SectionGrid from '../sections/SectionGrid'
+
+import defaultConfig from '../../config'
 
 const menu = [
   'Home',
@@ -30,7 +34,7 @@ const menu = [
   'Rounded',
 ]
 
-const App = () => {
+const App = ({ config }) => {
   const [pagination, setPagination] = useState(0)
   const [exampleGrid, setExampleGrid] = useState(false)
 
@@ -52,11 +56,6 @@ const App = () => {
     setExampleGrid(!exampleGrid)
   }
 
-  const x = {
-    color: <SectionColor />,
-    gridx: <SectionGrid handleGrid={handleGrid} active={exampleGrid} />,
-  }
-
   return (
     <>
       <Navigation
@@ -75,21 +74,41 @@ const App = () => {
         renderAllPagesOnFirstRender
       >
         <SectionHeader />
-        <SectionTypography />
-        <SectionTextSize />
-        <SectionHeading />
-        <SectionBreakpoint />
-        <SectionGrid handleGrid={handleGrid} active={exampleGrid} />
-        <SectionColor />
-        <SectionThemes />
-        <SectionBorder />
-        <SectionMargin />
-        <SectionPadding />
-        <SectionRounded />
+        <SectionTypography typographies={config.typographies} />
+        <SectionTextSize
+          textSize={config.textSize}
+          typographies={config.typographies}
+        />
+        <SectionHeading
+          headings={config.headings}
+          typographies={config.typographies}
+        />
+        <SectionBreakpoint breakpoints={config.breakpoints} />
+        <SectionGrid
+          handleGrid={handleGrid}
+          active={exampleGrid}
+          grid={config.grid}
+        />
+        <SectionColor colors={config.colors} />
+        <SectionThemes themes={config.themes} />
+        <SectionBorder border={config.border} />
+        <SectionMargin margin={config.margin} />
+        <SectionPadding padding={config.padding} />
+        <SectionRounded rounded={config.rounded} />
       </ReactPageScroller>
       <GlobalStyle />
     </>
   )
+}
+
+App.propTypes = {
+  config: PropTypes.object,
+}
+
+App.getInitialProps = () => {
+  const explorer = cosmiconfigSync('universe')
+  const config = explorer.search() ? explorer.search().config : defaultConfig
+  return { config }
 }
 
 export default App

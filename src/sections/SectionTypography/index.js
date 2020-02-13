@@ -3,22 +3,20 @@ import { Container, Content } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { BoxTypography } from '../../components/BoxTypography'
 
-const tipographys = require('../../../config/typographies').default
-
-const SectionTypography = () => {
-  const [active, setActive] = useState(Object.values(tipographys)[0])
+const SectionTypography = ({ typographies }) => {
+  const [active, setActive] = useState(Object.values(typographies)[0])
 
   return (
     <Container>
       <ContainerHeader
         title="Typography"
-        data={tipographys}
+        data={typographies}
         handleMenu={setActive}
         active={active}
       />
 
       <Content sidebar>
-        <BoxTypography data={tipographys} active={active} />
+        <BoxTypography data={typographies} active={active} />
       </Content>
     </Container>
   )

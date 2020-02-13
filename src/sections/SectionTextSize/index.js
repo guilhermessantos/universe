@@ -2,11 +2,8 @@ import React, { useState } from 'react'
 import { Container, Content, Example } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
-import config from '../../../config'
 
-const { textSize, typographies } = config
-
-const SectionTextSize = () => {
+const SectionTextSize = ({ textSize, typographies }) => {
   const [active, setActive] = useState(Object.values(typographies)[0])
   const [activeSize, setActiveSize] = useState(Object.values(textSize)[0])
 

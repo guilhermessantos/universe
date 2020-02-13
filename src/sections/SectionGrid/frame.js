@@ -24,6 +24,7 @@ const FrameGrid = () => {
       </S.Buttons>
 
       <StyledFrame
+        theme={{}}
         style={{
           height: '100%',
           margin: '0 auto',

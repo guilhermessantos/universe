@@ -3,18 +3,15 @@ import { Container, Content, Example } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
 
-const headings = require('../../../config/headings.js').default
-const tipographys = require('../../../config/typographies').default
-
-const SectionHeading = () => {
-  const [active, setActive] = useState(Object.values(tipographys)[0])
+const SectionHeading = ({ headings, typographies }) => {
+  const [active, setActive] = useState(Object.values(typographies)[0])
   const [activeSize, setActiveSize] = useState(Object.values(headings)[0])
 
   return (
     <Container>
       <ContainerHeader
         title="Heading"
-        data={tipographys}
+        data={typographies}
         active={active}
         handleMenu={setActive}
       />
