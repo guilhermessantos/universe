@@ -1,4 +1,5 @@
 import React from 'react'
+import t from 'prop-types'
 import { Container, Content } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { Carousel } from '../../components/Carousel'
@@ -13,6 +14,10 @@ const SectionPalette = ({ themes }) => {
       </Content>
     </Container>
   )
+}
+
+SectionPalette.propTypes = {
+  themes: t.object,
 }
 
 export default SectionPalette

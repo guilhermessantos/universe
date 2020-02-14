@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import t from 'prop-types'
 import { Container, Content, Example } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
@@ -32,6 +33,10 @@ const SectionMargin = ({ margin }) => {
       </Content>
     </Container>
   )
+}
+
+SectionMargin.propTypes = {
+  margin: t.object,
 }
 
 export default SectionMargin

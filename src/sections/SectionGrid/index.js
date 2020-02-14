@@ -40,6 +40,7 @@ const SectionGrid = ({ handleGrid, active, grid }) => (
 SectionGrid.propTypes = {
   handleGrid: t.func,
   active: t.bool,
+  grid: t.object,
 }
 
 export default SectionGrid

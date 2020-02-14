@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import t from 'prop-types'
 import { Container, Content } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { BoxTypography } from '../../components/BoxTypography'
@@ -20,6 +21,10 @@ const SectionTypography = ({ typographies }) => {
       </Content>
     </Container>
   )
+}
+
+SectionTypography.propTypes = {
+  typographies: t.object,
 }
 
 export default SectionTypography

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import t from 'prop-types'
 import { Container, Content, Example } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
@@ -39,6 +40,10 @@ const SectionBorder = ({ border }) => {
       </Content>
     </Container>
   )
+}
+
+SectionBorder.propTypes = {
+  border: t.object,
 }
 
 export default SectionBorder

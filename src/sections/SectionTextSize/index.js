@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import t from 'prop-types'
 import { Container, Content, Example } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
@@ -40,6 +41,11 @@ const SectionTextSize = ({ textSize, typographies }) => {
       </Content>
     </Container>
   )
+}
+
+SectionTextSize.propTypes = {
+  textSize: t.object,
+  typographies: t.object,
 }
 
 export default SectionTextSize

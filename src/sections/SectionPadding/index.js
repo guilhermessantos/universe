@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import t from 'prop-types'
 import { Container, Content, Example } from '../../components/Container'
 import { ContainerHeader } from '../../components/ContainerHeader'
 import { ContainerSidebar } from '../../components/ContainerSidebar'
@@ -32,6 +33,10 @@ const SectionPadding = ({ padding }) => {
       </Content>
     </Container>
   )
+}
+
+SectionPadding.propTypes = {
+  padding: t.object,
 }
 
 export default SectionPadding
