@@ -13,7 +13,9 @@ const SectionHero = ({ name, navigation }) => (
         <S.Content>
           <S.Title>Universe</S.Title>
           {name && <small>{name}</small>}
-          <p>Universe came to organize and exhibit the Design System of your project, uniting Front + Design</p>
+          <p>
+            Display and organize the design system of your project, providing consultation for front end and design.
+          </p>
           <Button as='a' href='https://github.com/guilhermessantos' title='Get started'>
             Get started
           </Button>
