@@ -1,0 +1,91 @@
+{
+  "config": {
+    "name": "",
+    "hero": true,
+    "themes": [
+      {
+        "name": "cerise",
+        "colors": {
+          "base": "#d93f87",
+          "medium": "#af2867",
+          "dark": "#84194b"
+        }
+      },
+      {
+        "name": "revolver",
+        "colors": {
+          "base": "#543677",
+          "medium": "#40295a",
+          "dark": "#301f44"
+        }
+      },
+      {
+        "name": "minsk",
+        "colors": {
+          "base": "#44318d",
+          "medium": "#392975",
+          "dark": "#2a1e56"
+        }
+      },
+      {
+        "name": "deluge",
+        "colors": {
+          "base": "#8265a7",
+          "medium": "#6d568c",
+          "dark": "#4c3c61"
+        }
+      },
+      {
+        "name": "hitGray",
+        "colors": {
+          "base": "#a4b3b6",
+          "medium": "#838f92",
+          "dark": "#677173"
+        }
+      }
+    ],
+    "colors": {
+      "background": "#ffffff",
+      "line": "#D9D9D9",
+      "link": "#D93F87",
+      "text": "#555555",
+      "title": "#000000"
+    },
+    "fontFamily": {
+      "primary": "Roboto",
+      "secondary": "Tahoma",
+      "tertiary": "Arial"
+    },
+    "fontSize": {
+      "small": "12px",
+      "medium": "16px",
+      "large": "24px"
+    },
+    "grid": {
+      "size": "1200px",
+      "gutter": "32px",
+      "columns": "12"
+    },
+    "spacings": {
+      "xxSmall": "2px",
+      "xSmall": "4px",
+      "small": "8px",
+      "medium": "16px",
+      "large": "24px",
+      "xLarge": "32px",
+      "xxLarge": "40px"
+    },
+    "layers": {
+      "base": "10",
+      "menu": "20",
+      "overlay": "30",
+      "modal": "40",
+      "alwaysOnTop": "50"
+    },
+    "responsive": {
+      "small": "320px",
+      "medium": "768px",
+      "large": "1200px"
+    }
+  }
+}
