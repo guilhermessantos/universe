@@ -1,6 +1,6 @@
 # Universe
 
-Display and organize the design system of your project, providing consultation for front end and design.
+Display and organize the design system of your project, providing consultation for the frontend and design.
 
 ## Table of contents
 
@@ -22,12 +22,25 @@ Display and organize the design system of your project, providing consultation f
 
 ## Quick start
 
-- Install with npm `npm universe`
-- Install with yarn `yarn universe`
-- Create file in project root `universe.config.js`
-- Add your layout settings as in the example below
+### Install
 
-## Example configuration
+#### Using npm
+
+```bash
+npm install universe
+```
+
+#### Usign yarn
+
+```
+yarn add universe
+```
+
+### Create configuration file
+
+You need to create the `universe.config.js` file in project root usign the follow configuration as an example
+
+#### Example configuration
 
 ```js
 module.exports = {
@@ -55,7 +68,7 @@ module.exports = {
 
 | Key        | Type     | Default | Description                                                           |
 | ---------- | -------- | ------- | --------------------------------------------------------------------- |
-| name       | `string` |         | show name project                                                     |
+| name       | `string` |         | show project name                                                     |
 | hero       | `bool`   | `true`  | shows highlighted section                                             |
 | fontFamily | `object` | `{}`    | displays font families                                                |
 | fontSize   | `object` | `{}`    | displays font sizes                                                   |
@@ -84,7 +97,7 @@ fontFamily: {
 ### fontSize
 
 - Only `string` is accepted in value.
-- For it to work use a unit of measurement, ex: `px`, `rem`, `em`.
+- Use one of measurement unit, ex: `px`, `rem`, `em`.
 
 ```js
 fontSize: {
@@ -172,8 +185,8 @@ responsive: {
 ### utils
 
 - If there is no `title` the object `key` will be used
-- Text is optional
-- Objeto data é obrigatório e deve conter chave valor
+- `text` is optional
+- `data` is a required object and need to be `key`: `value`
 
 ```js
 utils: {
