@@ -1,30 +1,215 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Universe
 
-## Getting Started
+Display and organize the design system of your project, providing consultation for the frontend and design.
 
-First, run the development server:
+## Table of contents
+
+- [Quick start](#quick-start)
+- [Example configuration](#example-configuration)
+- [Information](#information)
+- [Configuration](#configuration)
+  - [fontFamily](#fontFamily)
+  - [fontSize](#fontSize)
+  - [themes](#themes)
+  - [colors](#colors)
+  - [grid](#grid)
+  - [spacings](#spacings)
+  - [layers](#layers)
+  - [responsive](#responsive)
+  - [utils](#utils)
+- [Thanks](#thanks)
+- [License](#license)
+
+## Quick start
+
+### Install
+
+#### Using npm
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm install universe
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Usign yarn
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+yarn add universe
+```
 
-## Learn More
+### Create configuration file
 
-To learn more about Next.js, take a look at the following resources:
+You need to create the `universe.config.js` file in project root usign the follow configuration as an example
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Example configuration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```js
+module.exports = {
+  name: "Project X",
+  fontFamily: {
+    primary: "Arial"
+  },
+  fontSize: {
+    small: "15px";
+  },
+  themes: [
+    {
+      name: "cerise",
+      colors: {
+        base: "#d93f87",
+        medium: "#af2867",
+        dark: "#84194b"
+      }
+    },
+  ]
+}
+```
 
-## Deploy on Vercel
+# Information
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Key        | Type     | Default | Description                                                           |
+| ---------- | -------- | ------- | --------------------------------------------------------------------- |
+| name       | `string` |         | show project name                                                     |
+| hero       | `bool`   | `true`  | shows highlighted section                                             |
+| fontFamily | `object` | `{}`    | displays font families                                                |
+| fontSize   | `object` | `{}`    | displays font sizes                                                   |
+| themes     | `array`  | `[]`    | displays themes                                                       |
+| colors     | `object` | `{}`    | displays colors                                                       |
+| grid       | `object` | `{}`    | displays the settings of a grid, such as `columns`,` margin`, `width` |
+| spacings   | `object` | `{}`    | displays spacing such as `padding`,` margin`                          |
+| layers     | `object` | `{}`    | specifies the stack order of an element                               |
+| responsive | `object` | `{}`    | displays breakpoints                                                  |
+| utils      | `object` | `{}`    | displays customized data, using key value                             |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Configuration
+
+### fontFamily
+
+- Only `string` is accepted in value.
+
+```js
+fontFamily: {
+  title: 'Arial',
+  subTitle: 'Roboto',
+  text: 'Tahoma'
+}
+```
+
+### fontSize
+
+- Only `string` is accepted in value.
+- Use one of measurement unit, ex: `px`, `rem`, `em`.
+
+```js
+fontSize: {
+  small: '10px',
+  medium: '16px'
+}
+```
+
+### themes
+
+- Theme `name` is required.
+- Only valid `hexadecimal` colors are accepted.
+
+```js
+themes: [
+  {
+    name: 'cerise',
+    colors: {
+      base: '#d93f87',
+      medium: '#af2867',
+      dark: '#84194b'
+    }
+  }
+]
+```
+
+### Colors
+
+- Only valid `hexadecimal` colors are accepted.
+
+```js
+colors: {
+  background: "#ffffff",
+  line: "#D9D9D9",
+  link: "#D93F87",
+}
+```
+
+### grid
+
+- Only `string` is accepted in value
+
+```js
+grid: {
+  size: "1200px",
+  gutter: "32px",
+  columns: "12"
+}
+```
+
+### spacings
+
+- Only `string` is accepted in value
+
+```js
+spacings: {
+  small: "8px",
+  medium: "16px",
+}
+```
+
+### layers
+
+- Only `string` is accepted in value
+
+```js
+layers: {
+  base: "10",
+  menu: "20",
+}
+```
+
+### responsive
+
+- Only `string` is accepted in value
+
+```js
+responsive: {
+  small: "320px",
+  medium: "768px",
+  large: "1200px"
+}
+```
+
+### utils
+
+- If there is no `title` the object `key` will be used
+- `text` is optional
+- `data` is a required object and need to be `key`: `value`
+
+```js
+utils: {
+  example: {
+    title: 'example title',
+    text: 'example description'
+    data: {
+      small: 'example1'
+      medium: 'example2'
+    }
+  }
+}
+```
+
+## Commands
+
+- `yarn universe` - create server
+- `yarn universe build` - create project build
+
+## Thanks
+
+Special thanks to [@guilouro](http://github.com/guilouro) for feedbacks and contributions
+
+## Licence
+
+[License](https://github.com/guilhermessantos/universe/blob/master/LICENSE)
